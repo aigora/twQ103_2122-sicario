@@ -1,11 +1,11 @@
-# [Título del trabajo]
+# Sicario
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+Sicario trata de 
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Maria Soledad Peña Benita (ID: solpeena)
 
 ## Objetivos del trabajo
 
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+
