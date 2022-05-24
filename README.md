@@ -1,10 +1,9 @@
 # Sicario
 
-Sicario trata de 
 
 ## Integrantes del equipo
 
-Maria Soledad Peña Benita (ID: solpeena)
+Irene Mercarder, Maria Soledad Peña Benita (ID: solpeena)
 
 ## Objetivos del trabajo
 
