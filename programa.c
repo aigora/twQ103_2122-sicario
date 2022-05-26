@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include <iostream>
-#include <ctime> 
-#include <locale.h>
 #include <string.h>
 #include <stdlib.h>
+
+
+struct jugador {
+        char nombre[100];
+        int puntuacion;
+};
+
 
 void banner() {
 	printf("\n");
@@ -44,12 +48,14 @@ void banner1() {
 int main () {
 	
 	int i=0,j=0,m=0;
-	int respuesta1,respuesta2,respuesta3, respuesta4, respuesta6;
-	float respuesta5;
-	unsigned t0, t1,t2, t3, t4;
-	double time, time1, time2, time3;
-	
+	int respuesta1,respuesta2,respuesta3, respuesta4, respuesta6, respuesta5;
+	char nombre;
+	int contador=0; i;
+    char respuesta[50], acertar[100]="RESPUESTA CORRECTA";
+    int puntos=0;
 	char opcion, jugador1, jugador2, numero1, numero2, numeroJugadores; 
+	
+	FILE*fentrada;
 	
 	banner();
 
@@ -137,7 +143,7 @@ do {
 					printf("Debereis resolver los distintos acertijos antes de que se acabe el tiempo\n");
 					printf("Mucha suerte. Confiamos en vosotros\n"); 
 					
-					t0=clock();
+				
 						
 					printf("\n\n\nPRIMERA PREGUNTA.\n");
 					printf("\nBienvenidos al ordenador general. Para esta prueba contareis conun tiempo de 15seg, donde debereis marcar la opcion correcta para abrir la siguiente sala.\n");
@@ -169,16 +175,12 @@ do {
        		
  					}while(respuesta1!=3);  
 					printf("RESPUESTA COORECTA\n");
-					t1 = clock();
- 
-	                time = (double(t1-t0)/CLOCKS_PER_SEC);
-	                std::cout << "tiempo de repuesta: " << time << std::endl;
+			
 					if(respuesta1!=3)
 					printf(" Pista nº1: ");
 							
 					system("cls");
-	                    
-	                t0=clock();      
+	                        
 	            
 	 				printf("\n\n\nSEGUNDA PREGUNTA. Aqui te enfrentaras a un pequeño problema matematico. \n");
 	 
@@ -199,14 +201,12 @@ do {
 	 
 					printf("RESPUESTA CORRECTA. Muy bien, ya vemos que tienes dotes suficientes para recompensarte con la pista. Aqui tienes");
 					printf("Pista nº2:");
-					t2 = clock();
- 
-                    time1 = (double(t2-t0)/CLOCKS_PER_SEC);
-	                std::cout << "tiempo de respuesta: " << time1 << std::endl;
+			
+
 	                
 					system("cls"); 
 					
-					t0=clock();
+			
 					printf("\n\n\nTERCERA PREGUNTA.\n");
 					do {
 	
@@ -234,13 +234,7 @@ do {
  					} while(respuesta3!=1); 
 					printf("RESPUESTA COORECTA\n");
 					printf("Pista nº3:");
-					t3=clock();
-					
-					time2 = (double(t3-t0)/CLOCKS_PER_SEC);
-	                std::cout << "tiempo de respuesta: " << time2 << std::endl;
-					
-                		
-						
+	
 					system("cls");
 						
 					printf("\n\n\nCUARTA PREGUNTA.\n");
@@ -258,14 +252,8 @@ do {
 					 
 					system("cls");
 					
-					printf("\n\n\n QUINTA PREGUNTA");
-					
-	  			
-					
-					printf("RESPUESTA CORRECTA.\n");
-					printf("Pista nº5:");
 					  
-					printf("\n\n\n SEXTA PREGUNTA.");
+					printf("\n\n\n QUINTA PREGUNTA.");
 	  				do {
 	
 						printf("Escoja una de las siguientes opciones, para la pregunta:\n");
@@ -274,7 +262,7 @@ do {
 						printf("Opcion 2: come plantas y carne.\n");
 						printf("Opcion 3: come carne.\n");
 						printf("Opcion 4: ninguna de las anteriores.\n");
-  						scanf("%d", &respuesta1);
+  						scanf("%d", &respuesta5);
   						
   						switch(respuesta1)
   						{
@@ -293,7 +281,7 @@ do {
  					}while(respuesta1!=3);  
 					printf("RESPUESTA COORECTA\n");
 					printf("Aquí tienes la ultima pista de todas. Espero que sea de ayuda para averiguar quien es el asesino.");
-					printf("Pista nº6:");
+					printf("Pista nº5:");
 					
 					system("cls");
 					
@@ -306,7 +294,7 @@ do {
 						printf(" Opcion 3: Cámara Mario (merinu le debia dinero por problemas con el juego).\n");
 						printf(" Opcion 4: La sustituta Sara (tenía envidia de la muerta).\n");
 						printf(" Opcion 5: Guionista Irina (merinu se nego a hacer los papeles y por su culpa la despidieron).\n");
-  						scanf("%d", &respuesta3);
+  						scanf("%d", &respuesta6);
   						
   						switch(respuesta3)
   						{
@@ -318,13 +306,13 @@ do {
                         break;
                  		case 4 : printf("Opción 4--ERROR\n");
                     	break;
-                    	case 5 : printf("Opción 4\n");
+                    	case 5 : printf("Opción 5\n");
                     	break;
                  		default : printf("Opción desconocida\n"); 
                  		break;
        					}
        		
- 					} while(respuesta3!=5); 
+ 					} while(respuesta6!=5); 
 					printf("RESPUESTA COORECTA.\n");
 					
 					printf("Enhorabuena detective, ha conseguido encontrar al asesino.");
@@ -333,19 +321,32 @@ do {
 					
 			case 'C':
 			case 'c':
-						
-						
-						
-					
-				
 			
-							
-                		
-	                   	
+			fentrada = fopen("entrada.txt", "r");
+        		if (fentrada == NULL) {
+                	printf("Error de lectura\n");
+                	return 0;
+        		}
+        		
+				i=0;
+        		contador=0;
+        		while (fscanf(fentrada, "%s %d", jugador[i].nombre, jugador[i].puntuacion) != EOF) {
+                	i++;
+                	contador++;                
+				}
+        		fclose(fentrada);
+        		
+        		for(i=0; i<contador; i++){
+        			if (jugador[i].puntos>jugador[i+1].puntos) {
+        				printf("%d %s %d %d", orden, jugador[i].nombre, jugador[i].puntos);
+            			orden++;
+            		} 
+				}   
+       		break;	
+				
                 			
-                	
             case 'D':
-                	printf("Se procedera a salir de SICARIO.\n");
+                	printf("Saliendo de SICARIO.\n");
                 	printf("\n");
                 	banner1();
                 		return 0;
