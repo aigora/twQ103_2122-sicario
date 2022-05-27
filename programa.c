@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-
 struct Jugador {
 	char nombre[50];
 	int puntuacion;
@@ -113,7 +112,7 @@ do {
         
         	case 'A':
         	case 'a':
-        		printf("A seleccionado la opción Tutorial");
+        		printf("A seleccionado la opcion Tutorial");
         		printf("\n En la ceremonia de los Oscars aparece un cadaver.\n");
                 printf(" La muerta se trata de Merinu, una actriz veterana que protagonizaba una pelicula junto a la actriz del momento, Paula.\n");
                 printf(" Todo el mundo que participaba en la pelicula sabia que Merinu tenía problemas con mucha gente,");
@@ -137,7 +136,7 @@ do {
                     printf(" Durante la fiesta la vieron agitada, y al final de la noche aparecio muerta en los bastidores del escenario.\n\n");
 					printf("\nBienvenido a tu aventura como inspector. Bienvenido a SICARIO\n");
 					
-					printf("Debereis resolver los distintos acertijos antes de que se acabe el tiempo\n");
+					printf("Debereis resolver los distintos acertijos.\n");
 					printf("Mucha suerte. Confiamos en vosotros\n"); 
 					
 			
@@ -173,7 +172,7 @@ do {
  					}while(respuesta1!=3);  
 					printf("RESPUESTA COORECTA\n");
 					printf("Aqui tienes tu primera pista: no es una persona muy cercana a ella, tan solo trabajan juntos.");  
-					printf("Debes avanzar un poco más para conseguir las pistas que de verdad te ayuden a descartar");
+					printf("Debes avanzar un poco mas para conseguir las pistas que de verdad te ayuden a descartar");
 	            
 	 				printf("\n\n\nSEGUNDA PREGUNTA. Aqui te enfrentaras a un pequeño problema matematico. \n");
 	 
@@ -222,7 +221,7 @@ do {
        		
  					} while(respuesta3!=1); 
 					printf("RESPUESTA COORECTA\n");
-					printf("Pista nº3: es una mujer. \n");
+					printf("Pista numero 3: es una mujer. \n");
 				
 					
 						
@@ -237,7 +236,7 @@ do {
 					
 					printf("RESPUESTA CORRECTA.\n");
 					printf("Ya poco a poco vas averiguando quien mato a merinu.\n");
-					printf("Aquí tienes la pista nº4: Mario cosiguio devuelta el dinero que le debian.\n");
+					printf("Aquí tienes la pista numero 4: Mario cosiguio devuelta el dinero que le debian.\n");
 					
 					  
 					printf("\n\n\n QUINTA PREGUNTA.");
@@ -268,7 +267,7 @@ do {
  					}while(respuesta1!=3);  
 					printf("RESPUESTA COORECTA\n");
 					printf("Aqui tienes la ultima pista de todas. Espero que sea de ayuda para averiguar quien es el asesino. \n");
-					printf("Pista numero5: a Irina no le coincidia su cuartada con el resto del equipo. \n");
+					printf("Pista numero 5: a Irina no le coincidia su cuartada con el resto del equipo. \n");
 					printf("\n");
 					
 					
@@ -283,6 +282,7 @@ do {
 						printf(" Opcion 3: Camara Mario (merinu le debia dinero por problemas con el juego).\n");
 						printf(" Opcion 4: La sustituta Sara (tenia envidia de la muerta).\n");
 						printf(" Opcion 5: Guionista Irina (merinu se nego a hacer los papeles y por su culpa la despidieron).\n");
+						printf("\n");
   						scanf("%d", &respuesta6);
   						
   						switch(respuesta3)
@@ -311,7 +311,7 @@ do {
 			case 'c':
 				system("cls");
 	    		printf("\nEntrando a la tabla de puntuaciones.\n\n");
-	    		
+	    	
 	    		break;		
 					
             case 'D':
